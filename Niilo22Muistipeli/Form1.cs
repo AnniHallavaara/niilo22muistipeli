@@ -25,8 +25,11 @@ namespace Niilo22Muistipeli
 
         private void alustaPelilauta()
         {
+            // Alustetaan korttien näkyvyys ja kuvat- taulukot uusiksi
             nakyvissa = new bool[korttienMaara];
             kuvat = new Bitmap[korttienMaara];
+
+            // Näytetään valittu määrä kortteja
             panel12.Visible = false;
             panel16.Visible = false;
             if (korttienMaara >= 12)
