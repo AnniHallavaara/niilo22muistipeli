@@ -100,5 +100,9 @@ namespace Niilo22Muistipeli
             pictureBox_Click(sender, e, 7);
         }
 
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
