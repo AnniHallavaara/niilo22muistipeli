@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.kortitPanel = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -46,8 +46,18 @@
             this.laudanKoko8 = new System.Windows.Forms.ToolStripMenuItem();
             this.laudanKoko12 = new System.Windows.Forms.ToolStripMenuItem();
             this.laudanKoko16 = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.kortitPanel.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -57,30 +67,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // kortitPanel
             // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(24, 52);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(669, 541);
-            this.panel1.TabIndex = 0;
+            this.kortitPanel.Controls.Add(this.panel1);
+            this.kortitPanel.Controls.Add(this.panel12);
+            this.kortitPanel.Controls.Add(this.panel8);
+            this.kortitPanel.Location = new System.Drawing.Point(42, 52);
+            this.kortitPanel.Name = "kortitPanel";
+            this.kortitPanel.Size = new System.Drawing.Size(575, 564);
+            this.kortitPanel.TabIndex = 0;
             // 
-            // panel2
+            // panel8
             // 
-            this.panel2.Controls.Add(this.pictureBox8);
-            this.panel2.Controls.Add(this.pictureBox7);
-            this.panel2.Controls.Add(this.pictureBox6);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(36, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(530, 261);
-            this.panel2.TabIndex = 1;
+            this.panel8.Controls.Add(this.pictureBox8);
+            this.panel8.Controls.Add(this.pictureBox7);
+            this.panel8.Controls.Add(this.pictureBox6);
+            this.panel8.Controls.Add(this.pictureBox5);
+            this.panel8.Controls.Add(this.pictureBox4);
+            this.panel8.Controls.Add(this.pictureBox3);
+            this.panel8.Controls.Add(this.pictureBox2);
+            this.panel8.Controls.Add(this.pictureBox1);
+            this.panel8.Location = new System.Drawing.Point(36, 24);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(521, 261);
+            this.panel8.TabIndex = 1;
             // 
             // pictureBox8
             // 
@@ -219,6 +241,7 @@
             this.laudanKoko8.Size = new System.Drawing.Size(152, 22);
             this.laudanKoko8.Text = "2 * 4";
             this.laudanKoko8.ToolTipText = "8 korttia (2 riviä ja 4 saraketta).";
+            this.laudanKoko8.Click += new System.EventHandler(this.laudanKoko8_Click);
             // 
             // laudanKoko12
             // 
@@ -226,6 +249,7 @@
             this.laudanKoko12.Size = new System.Drawing.Size(152, 22);
             this.laudanKoko12.Text = "3 * 4";
             this.laudanKoko12.ToolTipText = "12 korttia (3 riviä ja 4 saraketta).";
+            this.laudanKoko12.Click += new System.EventHandler(this.laudanKoko12_Click);
             // 
             // laudanKoko16
             // 
@@ -233,19 +257,130 @@
             this.laudanKoko16.Size = new System.Drawing.Size(152, 22);
             this.laudanKoko16.Text = "4 * 4";
             this.laudanKoko16.ToolTipText = "16 korttia (4 riviä ja 4 saraketta).";
+            this.laudanKoko16.Click += new System.EventHandler(this.laudanKoko16_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.pictureBox12);
+            this.panel12.Controls.Add(this.pictureBox11);
+            this.panel12.Controls.Add(this.pictureBox9);
+            this.panel12.Controls.Add(this.pictureBox10);
+            this.panel12.Location = new System.Drawing.Point(36, 292);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(521, 126);
+            this.panel12.TabIndex = 2;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox9.Location = new System.Drawing.Point(0, 7);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(115, 119);
+            this.pictureBox9.TabIndex = 5;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox10.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox10.Location = new System.Drawing.Point(140, 4);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(115, 119);
+            this.pictureBox10.TabIndex = 6;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox11.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox11.Location = new System.Drawing.Point(273, 4);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(115, 119);
+            this.pictureBox11.TabIndex = 7;
+            this.pictureBox11.TabStop = false;
+            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox12.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox12.Location = new System.Drawing.Point(403, 3);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(115, 119);
+            this.pictureBox12.TabIndex = 8;
+            this.pictureBox12.TabStop = false;
+            this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox13);
+            this.panel1.Controls.Add(this.pictureBox14);
+            this.panel1.Controls.Add(this.pictureBox15);
+            this.panel1.Controls.Add(this.pictureBox16);
+            this.panel1.Location = new System.Drawing.Point(34, 424);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(521, 126);
+            this.panel1.TabIndex = 3;
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox13.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox13.Location = new System.Drawing.Point(5, 7);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(115, 119);
+            this.pictureBox13.TabIndex = 8;
+            this.pictureBox13.TabStop = false;
+            this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox14.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox14.Location = new System.Drawing.Point(142, 7);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(115, 119);
+            this.pictureBox14.TabIndex = 7;
+            this.pictureBox14.TabStop = false;
+            this.pictureBox14.Click += new System.EventHandler(this.pictureBox14_Click);
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox15.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox15.Location = new System.Drawing.Point(275, 4);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(115, 119);
+            this.pictureBox15.TabIndex = 5;
+            this.pictureBox15.TabStop = false;
+            this.pictureBox15.Click += new System.EventHandler(this.pictureBox15_Click);
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox16.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox16.Location = new System.Drawing.Point(403, 4);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(115, 119);
+            this.pictureBox16.TabIndex = 6;
+            this.pictureBox16.TabStop = false;
+            this.pictureBox16.Click += new System.EventHandler(this.pictureBox16_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 628);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.kortitPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.kortitPanel.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -256,6 +391,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,9 +408,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel kortitPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -281,6 +426,16 @@
         private System.Windows.Forms.ToolStripMenuItem laudanKoko8;
         private System.Windows.Forms.ToolStripMenuItem laudanKoko12;
         private System.Windows.Forms.ToolStripMenuItem laudanKoko16;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox10;
     }
 }
 

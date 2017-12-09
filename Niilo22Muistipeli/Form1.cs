@@ -12,8 +12,9 @@ namespace Niilo22Muistipeli
 {
     public partial class Form1 : Form
     {
-        bool[] nakyvissa = new bool[8];
-        Bitmap[] kuvat = new Bitmap[8];
+        int korttienMaara = 16;
+        bool[] nakyvissa;
+        Bitmap[] kuvat;
         Bitmap[] niilot = new Bitmap[]
         {
             Niilo22Muistipeli.Properties.Resources.Niilo1_pieni,
@@ -22,9 +23,11 @@ namespace Niilo22Muistipeli
             Niilo22Muistipeli.Properties.Resources.Niilo4_pieni,
         };
 
-        public Form1()
+        private void alustaPelilauta()
         {
-            InitializeComponent();
+            nakyvissa = new bool[korttienMaara];
+            kuvat = new Bitmap[korttienMaara];
+
 
             // Täytetään kuvat- taulukkoon tarvittava määrä kuvapareja
             for (int kuvatI = 0, niiloI = 0; kuvatI < kuvat.Length; kuvatI++)
@@ -46,9 +49,12 @@ namespace Niilo22Muistipeli
             // Järjestetään kuvat- taulukon kuvat satunnaiseen järjestykseen
             Random r = new Random();
             kuvat = kuvat.OrderBy(x => r.Next()).ToArray();
+        }
 
-
-
+        public Form1()
+        {
+            InitializeComponent();
+            alustaPelilauta();
         }
 
         private void pictureBox_Click(object sender, EventArgs e, int boksinNumero)
@@ -103,6 +109,64 @@ namespace Niilo22Muistipeli
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void laudanKoko8_Click(object sender, EventArgs e)
+        {
+            korttienMaara = 8;
+            alustaPelilauta();
+        }
+
+        private void laudanKoko12_Click(object sender, EventArgs e)
+        {
+            korttienMaara = 12;
+            alustaPelilauta();
+        }
+
+        private void laudanKoko16_Click(object sender, EventArgs e)
+        {
+            korttienMaara = 16;
+            alustaPelilauta();
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            pictureBox_Click(sender, e, 8);
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            pictureBox_Click(sender, e, 9);
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+            pictureBox_Click(sender, e, 10);
+        }
+
+        private void pictureBox12_Click(object sender, EventArgs e)
+        {
+            pictureBox_Click(sender, e, 11);
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+            pictureBox_Click(sender, e, 12);
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+            pictureBox_Click(sender, e, 13);
+        }
+
+        private void pictureBox15_Click(object sender, EventArgs e)
+        {
+            pictureBox_Click(sender, e, 14);
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+            pictureBox_Click(sender, e, 15);
         }
     }
 }
