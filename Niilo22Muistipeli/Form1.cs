@@ -12,6 +12,7 @@ namespace Niilo22Muistipeli
 {
     public partial class Form1 : Form
     {
+        int valittuKortti = -1;
         int korttienMaara = 16;
         PictureBox[] pictureboksit;
         bool[] nakyvissa;
@@ -87,11 +88,24 @@ namespace Niilo22Muistipeli
 
         private void pictureBox_Click(object sender, EventArgs e, int boksinNumero)
         {
+            // Kun ollaan klikkaamassa vuoron ensimmäistä korttia,
+            // -tarkistetaan oliko kortti jo näkyvissä
+            //    - jos oli, niin tulee virheilmoitus "kortti on jo arvattu"  ja ei tehdä mitään.
+            //    - jos ei ollut, kortti käännetään näkyviin ja tallennetaan että se on näkyvissä ja tallennetaan valitun kortin numero.
+            // Kun ollaan klikkaamassa vuoron toista korttia,
+            // -tarkistetaan oliko kortti jo näkyvissä
+            //    - jos oli, niin tulee virheilmoitus "kortti on jo arvattu"  ja ei tehdä mitään.
+            //    - jos ei ollut, kortti käännetään näkyviin ja tallennetaan että se on näkyvissä
+            //      -  vertaillaan ensimmäiseen käännettyyn korttiin, 
+            //          - jos kortti oli sama, pelaajan vuoro jatkuu (mahdollisesti annetaan visuaalinen vinkki vuoron jatkumisesta/ lisätään pisteitä)
+            //            - lisäksi jos kaikki kortit on käännetty, peli päättyy
+            //          - jos kortti oli eri kuin ensimmäinen, pelaajan vuoro päättyy ja molemmat kortit käännetään takaisin nurinpäin.
+            // 
             PictureBox pbox = (PictureBox)sender;
             if (nakyvissa[boksinNumero])
-                pbox.Image = Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            { pbox.Image = Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki; }
             else
-                pbox.Image = kuvat[boksinNumero];
+            { pbox.Image = kuvat[boksinNumero]; }
             nakyvissa[boksinNumero] = !nakyvissa[boksinNumero];
         }
 
