@@ -43,9 +43,11 @@ namespace Niilo22Muistipeli
                 }
             }
 
+            // Järjestetään kuvat- taulukon kuvat satunnaiseen järjestykseen
+            Random r = new Random();
+            kuvat = kuvat.OrderBy(x => r.Next()).ToArray();
 
 
-            
 
         }
 
