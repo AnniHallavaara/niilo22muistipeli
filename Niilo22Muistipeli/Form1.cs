@@ -27,7 +27,14 @@ namespace Niilo22Muistipeli
         {
             nakyvissa = new bool[korttienMaara];
             kuvat = new Bitmap[korttienMaara];
-
+            panel12.Visible = false;
+            panel16.Visible = false;
+            if (korttienMaara >= 12)
+            { panel12.Visible = true; }
+            if (korttienMaara >= 16)
+            {
+                panel16.Visible = true;
+            }
 
             // Täytetään kuvat- taulukkoon tarvittava määrä kuvapareja
             for (int kuvatI = 0, niiloI = 0; kuvatI < kuvat.Length; kuvatI++)

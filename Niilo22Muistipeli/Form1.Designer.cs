@@ -51,7 +51,7 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
@@ -72,7 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
@@ -81,7 +81,7 @@
             // 
             // kortitPanel
             // 
-            this.kortitPanel.Controls.Add(this.panel1);
+            this.kortitPanel.Controls.Add(this.panel16);
             this.kortitPanel.Controls.Add(this.panel12);
             this.kortitPanel.Controls.Add(this.panel8);
             this.kortitPanel.Location = new System.Drawing.Point(42, 52);
@@ -314,16 +314,16 @@
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
-            // panel1
+            // panel16
             // 
-            this.panel1.Controls.Add(this.pictureBox13);
-            this.panel1.Controls.Add(this.pictureBox14);
-            this.panel1.Controls.Add(this.pictureBox15);
-            this.panel1.Controls.Add(this.pictureBox16);
-            this.panel1.Location = new System.Drawing.Point(34, 424);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(521, 126);
-            this.panel1.TabIndex = 3;
+            this.panel16.Controls.Add(this.pictureBox13);
+            this.panel16.Controls.Add(this.pictureBox14);
+            this.panel16.Controls.Add(this.pictureBox15);
+            this.panel16.Controls.Add(this.pictureBox16);
+            this.panel16.Location = new System.Drawing.Point(34, 424);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(521, 126);
+            this.panel16.TabIndex = 3;
             // 
             // pictureBox13
             // 
@@ -396,7 +396,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
@@ -426,7 +426,7 @@
         private System.Windows.Forms.ToolStripMenuItem laudanKoko8;
         private System.Windows.Forms.ToolStripMenuItem laudanKoko12;
         private System.Windows.Forms.ToolStripMenuItem laudanKoko16;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
