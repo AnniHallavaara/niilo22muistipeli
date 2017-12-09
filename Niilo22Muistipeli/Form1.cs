@@ -13,6 +13,7 @@ namespace Niilo22Muistipeli
     public partial class Form1 : Form
     {
         int korttienMaara = 16;
+        PictureBox[] pictureboksit;
         bool[] nakyvissa;
         Bitmap[] kuvat;
         Bitmap[] niilot = new Bitmap[]
@@ -23,12 +24,17 @@ namespace Niilo22Muistipeli
             Niilo22Muistipeli.Properties.Resources.Niilo4_pieni,
         };
 
+        private void naytaKysymysmerkki(int kortinnumero, PictureBox pbox)
+        {
+            nakyvissa[kortinnumero] = false;
+            pbox.Image = Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+        }
         private void alustaPelilauta()
         {
             // Alustetaan korttien näkyvyys ja kuvat- taulukot uusiksi
             nakyvissa = new bool[korttienMaara];
             kuvat = new Bitmap[korttienMaara];
-
+           
             // Näytetään valittu määrä kortteja
             panel12.Visible = false;
             panel16.Visible = false;
@@ -37,6 +43,13 @@ namespace Niilo22Muistipeli
             if (korttienMaara >= 16)
             {
                 panel16.Visible = true;
+            }
+
+            // Käännetään näkyvissä olevat kortit nurinpäin
+            int i;
+            for (i = 0; i <korttienMaara; i++)
+            {
+                naytaKysymysmerkki(i, pictureboksit[i]);
             }
 
             // Täytetään kuvat- taulukkoon tarvittava määrä kuvapareja
@@ -64,6 +77,11 @@ namespace Niilo22Muistipeli
         public Form1()
         {
             InitializeComponent();
+            // Säilytetään pictureboxeja aputaulukossa jotta voidaan käsitellä niitä helposti loopeissa.
+            pictureboksit = new PictureBox[]
+            {
+                pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16
+            };
             alustaPelilauta();
         }
 
