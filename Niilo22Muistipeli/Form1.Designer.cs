@@ -43,9 +43,9 @@
             this.yksinpeliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kaksinpeliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.laudanKokoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.laudanKoko8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.laudanKoko12 = new System.Windows.Forms.ToolStripMenuItem();
+            this.laudanKoko16 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -194,42 +194,45 @@
             // yksinpeliToolStripMenuItem
             // 
             this.yksinpeliToolStripMenuItem.Name = "yksinpeliToolStripMenuItem";
-            this.yksinpeliToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yksinpeliToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.yksinpeliToolStripMenuItem.Text = "Yksinpeli";
             // 
             // kaksinpeliToolStripMenuItem
             // 
             this.kaksinpeliToolStripMenuItem.Name = "kaksinpeliToolStripMenuItem";
-            this.kaksinpeliToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kaksinpeliToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.kaksinpeliToolStripMenuItem.Text = "Kaksinpeli";
             // 
             // laudanKokoToolStripMenuItem
             // 
             this.laudanKokoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4,
-            this.toolStripMenuItem5});
+            this.laudanKoko8,
+            this.laudanKoko12,
+            this.laudanKoko16});
             this.laudanKokoToolStripMenuItem.Name = "laudanKokoToolStripMenuItem";
             this.laudanKokoToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.laudanKokoToolStripMenuItem.Text = "Laudan koko";
             // 
-            // toolStripMenuItem3
+            // laudanKoko8
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem3.Text = "2 * 4";
+            this.laudanKoko8.Name = "laudanKoko8";
+            this.laudanKoko8.Size = new System.Drawing.Size(152, 22);
+            this.laudanKoko8.Text = "2 * 4";
+            this.laudanKoko8.ToolTipText = "8 korttia (2 riviä ja 4 saraketta).";
             // 
-            // toolStripMenuItem4
+            // laudanKoko12
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem4.Text = "3 * 4";
+            this.laudanKoko12.Name = "laudanKoko12";
+            this.laudanKoko12.Size = new System.Drawing.Size(152, 22);
+            this.laudanKoko12.Text = "3 * 4";
+            this.laudanKoko12.ToolTipText = "12 korttia (3 riviä ja 4 saraketta).";
             // 
-            // toolStripMenuItem5
+            // laudanKoko16
             // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem5.Text = "4 * 4";
+            this.laudanKoko16.Name = "laudanKoko16";
+            this.laudanKoko16.Size = new System.Drawing.Size(152, 22);
+            this.laudanKoko16.Text = "4 * 4";
+            this.laudanKoko16.ToolTipText = "16 korttia (4 riviä ja 4 saraketta).";
             // 
             // Form1
             // 
@@ -275,9 +278,9 @@
         private System.Windows.Forms.ToolStripMenuItem yksinpeliToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kaksinpeliToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem laudanKokoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem laudanKoko8;
+        private System.Windows.Forms.ToolStripMenuItem laudanKoko12;
+        private System.Windows.Forms.ToolStripMenuItem laudanKoko16;
     }
 }
 
