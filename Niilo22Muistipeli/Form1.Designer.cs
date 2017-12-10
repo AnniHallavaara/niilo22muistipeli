@@ -56,6 +56,11 @@
             this.laudanKoko8 = new System.Windows.Forms.ToolStripMenuItem();
             this.laudanKoko12 = new System.Windows.Forms.ToolStripMenuItem();
             this.laudanKoko16 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblPelaaja1 = new System.Windows.Forms.Label();
+            this.lblPelaaja2 = new System.Windows.Forms.Label();
+            this.tbPelaaja1 = new System.Windows.Forms.TextBox();
+            this.tbPelaaja2 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.kortitPanel.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -77,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kortitPanel
@@ -84,7 +90,7 @@
             this.kortitPanel.Controls.Add(this.panel16);
             this.kortitPanel.Controls.Add(this.panel12);
             this.kortitPanel.Controls.Add(this.panel8);
-            this.kortitPanel.Location = new System.Drawing.Point(42, 52);
+            this.kortitPanel.Location = new System.Drawing.Point(164, 27);
             this.kortitPanel.Name = "kortitPanel";
             this.kortitPanel.Size = new System.Drawing.Size(575, 564);
             this.kortitPanel.TabIndex = 0;
@@ -218,7 +224,7 @@
             // 
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox8.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox8.Location = new System.Drawing.Point(404, 139);
+            this.pictureBox8.Location = new System.Drawing.Point(401, 142);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(115, 119);
             this.pictureBox8.TabIndex = 7;
@@ -309,7 +315,7 @@
             this.laudanKokoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(693, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(751, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -369,11 +375,59 @@
             this.laudanKoko16.ToolTipText = "16 korttia (4 riviä ja 4 saraketta).";
             this.laudanKoko16.Click += new System.EventHandler(this.laudanKoko16_Click);
             // 
+            // lblPelaaja1
+            // 
+            this.lblPelaaja1.AutoSize = true;
+            this.lblPelaaja1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPelaaja1.Location = new System.Drawing.Point(20, 26);
+            this.lblPelaaja1.Name = "lblPelaaja1";
+            this.lblPelaaja1.Size = new System.Drawing.Size(74, 20);
+            this.lblPelaaja1.TabIndex = 2;
+            this.lblPelaaja1.Text = "Pelaaja 1";
+            // 
+            // lblPelaaja2
+            // 
+            this.lblPelaaja2.AutoSize = true;
+            this.lblPelaaja2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPelaaja2.Location = new System.Drawing.Point(20, 101);
+            this.lblPelaaja2.Name = "lblPelaaja2";
+            this.lblPelaaja2.Size = new System.Drawing.Size(74, 20);
+            this.lblPelaaja2.TabIndex = 3;
+            this.lblPelaaja2.Text = "Pelaaja 2";
+            // 
+            // tbPelaaja1
+            // 
+            this.tbPelaaja1.Location = new System.Drawing.Point(9, 49);
+            this.tbPelaaja1.Name = "tbPelaaja1";
+            this.tbPelaaja1.Size = new System.Drawing.Size(100, 20);
+            this.tbPelaaja1.TabIndex = 4;
+            this.tbPelaaja1.Text = "Mikael";
+            // 
+            // tbPelaaja2
+            // 
+            this.tbPelaaja2.Location = new System.Drawing.Point(9, 124);
+            this.tbPelaaja2.Name = "tbPelaaja2";
+            this.tbPelaaja2.Size = new System.Drawing.Size(100, 20);
+            this.tbPelaaja2.TabIndex = 5;
+            this.tbPelaaja2.Text = "Onni";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tbPelaaja1);
+            this.panel1.Controls.Add(this.lblPelaaja2);
+            this.panel1.Controls.Add(this.tbPelaaja2);
+            this.panel1.Controls.Add(this.lblPelaaja1);
+            this.panel1.Location = new System.Drawing.Point(3, 273);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(155, 213);
+            this.panel1.TabIndex = 6;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 628);
+            this.ClientSize = new System.Drawing.Size(751, 628);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.kortitPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -402,6 +456,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,6 +493,11 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label lblPelaaja1;
+        private System.Windows.Forms.Label lblPelaaja2;
+        private System.Windows.Forms.TextBox tbPelaaja1;
+        private System.Windows.Forms.TextBox tbPelaaja2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

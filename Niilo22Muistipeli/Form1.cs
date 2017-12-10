@@ -10,8 +10,20 @@ using System.Windows.Forms;
 
 namespace Niilo22Muistipeli
 {
+    // tietue pelaajatietoja varten
+    public struct Pelaaja
+    {
+        public TextBox nimiboksi;
+        public Label pelaajaLabel;
+        public int oikeinArvatut;
+        public int vaarinArvatut;
+    }
+
+
+
     public partial class Form1 : Form
     {
+        Pelaaja pelaaja1, pelaaja2, vuorossaOlevaPelaaja;
         int aiemminKlikatunKortinNumero = -1;
         int korttienMaara = 16;
         PictureBox[] pictureboksit;
@@ -32,9 +44,20 @@ namespace Niilo22Muistipeli
         }
         private void alustaPelilauta()
         {
+            // asetetaan vuorossa oleva pelaaja
+            vuorossaOlevaPelaaja = pelaaja1;
+
+            // nollataan pelaajien oikeat ja väärät arvaukset
+            pelaaja1.oikeinArvatut = 0;
+            pelaaja1.vaarinArvatut = 0;
+            pelaaja2.oikeinArvatut = 0;
+            pelaaja2.vaarinArvatut = 0;
+
             // Alustetaan korttien näkyvyys ja kuvat- taulukot uusiksi
             nakyvissa = new bool[korttienMaara];
             kuvat = new Bitmap[korttienMaara];
+            // unohdetaan aiemmin valittu kortti
+            aiemminKlikatunKortinNumero = -1;
 
             // Näytetään valittu määrä kortteja
             panel12.Visible = false;
@@ -88,6 +111,11 @@ namespace Niilo22Muistipeli
                 pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16
             };
             alustaPelilauta();
+
+            pelaaja1.pelaajaLabel = lblPelaaja1;
+            pelaaja1.nimiboksi = tbPelaaja1;
+            pelaaja2.pelaajaLabel = lblPelaaja2;
+            pelaaja2.nimiboksi = tbPelaaja2; 
         }
 
         private bool ensimmaistaKaantamassa()
@@ -138,7 +166,7 @@ namespace Niilo22Muistipeli
                 PictureBox aiemminKlikattuPictureBox = pictureboksit[aiemminKlikatunKortinNumero];
                 if (juuriKlikattuPictureBox.Image == aiemminKlikattuPictureBox.Image)
                 {
-                   
+
                     // TODO:
                     // - jos kortti oli sama, pelaajan vuoro jatkuu (mahdollisesti annetaan visuaalinen vinkki vuoron
                     //  jatkumisesta/ lisätään pisteitä)
