@@ -94,5 +94,8 @@
   <ItemGroup>
     <None Include="Resources\NiilonKysymysmerkki.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Niilo22PelinLoppu.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

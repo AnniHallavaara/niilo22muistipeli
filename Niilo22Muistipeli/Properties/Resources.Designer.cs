@@ -81,6 +81,15 @@ namespace Niilo22Muistipeli.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Niilo22PelinLoppu {
+            get {
+                return ResourceManager.GetStream("Niilo22PelinLoppu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Niilo3_pieni {

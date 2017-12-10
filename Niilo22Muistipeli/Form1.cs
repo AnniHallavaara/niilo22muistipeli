@@ -35,7 +35,7 @@ namespace Niilo22Muistipeli
             // Alustetaan korttien näkyvyys ja kuvat- taulukot uusiksi
             nakyvissa = new bool[korttienMaara];
             kuvat = new Bitmap[korttienMaara];
-           
+
             // Näytetään valittu määrä kortteja
             panel12.Visible = false;
             panel16.Visible = false;
@@ -48,7 +48,7 @@ namespace Niilo22Muistipeli
 
             // Käännetään näkyvissä olevat kortit nurinpäin
             int i;
-            for (i = 0; i <korttienMaara; i++)
+            for (i = 0; i < korttienMaara; i++)
             {
                 naytaKysymysmerkki(i, pictureboksit[i]);
             }
@@ -106,13 +106,13 @@ namespace Niilo22Muistipeli
 
         private void pictureBox_Click(object sender, EventArgs e, int juuriKlikatunKortinNumero)
         {
-          
+
 
             // -tarkistetaan oliko kortti jo näkyvissä
 
             if (nakyvissa[juuriKlikatunKortinNumero])
             {
-            //    - jos oli, ei tehdä mitään.
+                //    - jos oli, ei tehdä mitään.
                 return;
             }
             // kortti käännetään näkyviin
@@ -142,6 +142,9 @@ namespace Niilo22Muistipeli
                     // - lisäksi jos kaikki kortit on käännetty, peli päättyy
                     if (loppuikoPeli())
                     {
+                        // Kun peli loppuu, soitetaan äänimerkki
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Niilo22Muistipeli.Properties.Resources.Niilo22PelinLoppu);
+                        player.Play();
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show("Peli loppui!", "Game over", buttons);
                         // TODO:  näytetään pisteet
