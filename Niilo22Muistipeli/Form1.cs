@@ -12,7 +12,7 @@ namespace Niilo22Muistipeli
 {
     public partial class Form1 : Form
     {
-        int valittuKortti = -1;
+        int aiemminKlikatunKortinNumero = -1;
         int korttienMaara = 16;
         PictureBox[] pictureboksit;
         bool[] nakyvissa;
@@ -81,32 +81,73 @@ namespace Niilo22Muistipeli
             // Säilytetään pictureboxeja aputaulukossa jotta voidaan käsitellä niitä helposti loopeissa.
             pictureboksit = new PictureBox[]
             {
-                pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16
+                pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5,
+                pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10,
+                pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16
             };
             alustaPelilauta();
         }
-
-        private void pictureBox_Click(object sender, EventArgs e, int boksinNumero)
+        private bool ensimmaistaKaantamassa()
         {
-            // Kun ollaan klikkaamassa vuoron ensimmäistä korttia,
-            // -tarkistetaan oliko kortti jo näkyvissä
-            //    - jos oli, niin tulee virheilmoitus "kortti on jo arvattu"  ja ei tehdä mitään.
-            //    - jos ei ollut, kortti käännetään näkyviin ja tallennetaan että se on näkyvissä ja tallennetaan valitun kortin numero.
-            // Kun ollaan klikkaamassa vuoron toista korttia,
-            // -tarkistetaan oliko kortti jo näkyvissä
-            //    - jos oli, niin tulee virheilmoitus "kortti on jo arvattu"  ja ei tehdä mitään.
-            //    - jos ei ollut, kortti käännetään näkyviin ja tallennetaan että se on näkyvissä
-            //      -  vertaillaan ensimmäiseen käännettyyn korttiin, 
-            //          - jos kortti oli sama, pelaajan vuoro jatkuu (mahdollisesti annetaan visuaalinen vinkki vuoron jatkumisesta/ lisätään pisteitä)
-            //            - lisäksi jos kaikki kortit on käännetty, peli päättyy
-            //          - jos kortti oli eri kuin ensimmäinen, pelaajan vuoro päättyy ja molemmat kortit käännetään takaisin nurinpäin.
-            // 
-            PictureBox pbox = (PictureBox)sender;
-            if (nakyvissa[boksinNumero])
-            { pbox.Image = Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki; }
+            if (aiemminKlikatunKortinNumero == -1)
+                return true;
             else
-            { pbox.Image = kuvat[boksinNumero]; }
-            nakyvissa[boksinNumero] = !nakyvissa[boksinNumero];
+                return false;
+        }
+        private void pictureBox_Click(object sender, EventArgs e, int juuriKlikatunKortinNumero)
+        {
+          
+
+            // -tarkistetaan oliko kortti jo näkyvissä
+
+            if (nakyvissa[juuriKlikatunKortinNumero])
+            {
+            //    - jos oli, ei tehdä mitään.
+                return;
+            }
+            // kortti käännetään näkyviin
+            PictureBox juuriKlikattuPictureBox = (PictureBox)sender;
+            juuriKlikattuPictureBox.Image = kuvat[juuriKlikatunKortinNumero];
+            // ja tallennetaan että se on näkyvissä
+            nakyvissa[juuriKlikatunKortinNumero] = true;
+
+
+            if (ensimmaistaKaantamassa())
+            {
+                // Kun ollaan klikkaamassa vuoron ensimmäistä korttia
+                // tallennetaan valitun kortin numero
+                aiemminKlikatunKortinNumero = juuriKlikatunKortinNumero;
+
+            }
+            else
+            {
+
+                //      -  vertaillaan juuri käännetyn kortin imagea aiemmin käännetyn kortin imageen
+                PictureBox aiemminKlikattuPictureBox = pictureboksit[aiemminKlikatunKortinNumero];
+                if (juuriKlikattuPictureBox.Image == aiemminKlikattuPictureBox.Image)
+                {
+                    // TODO:
+                    // - jos kortti oli sama, pelaajan vuoro jatkuu (mahdollisesti annetaan visuaalinen vinkki vuoron
+                    //  jatkumisesta/ lisätään pisteitä)
+                    // - lisäksi jos kaikki kortit on käännetty, peli päättyy
+
+                }
+                else
+                {
+                    // - jos kortti oli eri kuin ensimmäinen
+                    //   molemmat kortit käännetään takaisin nurinpäin.
+                    naytaKysymysmerkki(aiemminKlikatunKortinNumero, aiemminKlikattuPictureBox);
+                    naytaKysymysmerkki(juuriKlikatunKortinNumero, juuriKlikattuPictureBox);
+                    // TODO: pelaajan vuoro päättyy
+                }
+                // unohdetaan aiemmin klikattu kortti
+                aiemminKlikatunKortinNumero = -1;
+
+
+            }
+
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
