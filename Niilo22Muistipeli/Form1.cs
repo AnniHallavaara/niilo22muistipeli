@@ -87,6 +87,7 @@ namespace Niilo22Muistipeli
             };
             alustaPelilauta();
         }
+
         private bool ensimmaistaKaantamassa()
         {
             if (aiemminKlikatunKortinNumero == -1)
@@ -94,6 +95,15 @@ namespace Niilo22Muistipeli
             else
                 return false;
         }
+
+        private bool loppuikoPeli()
+        {
+            if (nakyvissa.Contains(false))
+                return false;
+            else
+                return true;
+        }
+
         private void pictureBox_Click(object sender, EventArgs e, int juuriKlikatunKortinNumero)
         {
           
@@ -130,6 +140,12 @@ namespace Niilo22Muistipeli
                     // - jos kortti oli sama, pelaajan vuoro jatkuu (mahdollisesti annetaan visuaalinen vinkki vuoron
                     //  jatkumisesta/ lisätään pisteitä)
                     // - lisäksi jos kaikki kortit on käännetty, peli päättyy
+                    if (loppuikoPeli())
+                    {
+                        MessageBoxButtons buttons = MessageBoxButtons.OK;
+                        MessageBox.Show("Peli loppui!", "Game over", buttons);
+                        // TODO:  näytetään pisteet
+                    }
 
                 }
                 else
