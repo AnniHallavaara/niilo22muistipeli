@@ -135,6 +135,9 @@ namespace Niilo22Muistipeli
                 else
                 {
                     // - jos kortti oli eri kuin ensimmäinen
+                    // - ilmoitetaan että valinta meni väärin
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show("Väärin meni!", "hups", buttons);
                     //   molemmat kortit käännetään takaisin nurinpäin.
                     naytaKysymysmerkki(aiemminKlikatunKortinNumero, aiemminKlikattuPictureBox);
                     naytaKysymysmerkki(juuriKlikatunKortinNumero, juuriKlikattuPictureBox);
