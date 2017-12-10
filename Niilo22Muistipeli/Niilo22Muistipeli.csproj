@@ -97,5 +97,11 @@
   <ItemGroup>
     <None Include="Resources\Niilo22PelinLoppu.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Niilo22EipaOllu.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Niilo22MulstipeliON.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

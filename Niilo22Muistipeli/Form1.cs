@@ -136,6 +136,7 @@ namespace Niilo22Muistipeli
                 PictureBox aiemminKlikattuPictureBox = pictureboksit[aiemminKlikatunKortinNumero];
                 if (juuriKlikattuPictureBox.Image == aiemminKlikattuPictureBox.Image)
                 {
+                   
                     // TODO:
                     // - jos kortti oli sama, pelaajan vuoro jatkuu (mahdollisesti annetaan visuaalinen vinkki vuoron
                     //  jatkumisesta/ lisätään pisteitä)
@@ -149,12 +150,20 @@ namespace Niilo22Muistipeli
                         MessageBox.Show("Peli loppui!", "Game over", buttons);
                         // TODO:  näytetään pisteet
                     }
+                    else
+                    {
+                        // kun saadaan pari, soitetaan äänimerkki
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(Niilo22Muistipeli.Properties.Resources.Niilo22MulstipeliON);
+                        player.Play();
+                    }
 
                 }
                 else
                 {
                     // - jos kortti oli eri kuin ensimmäinen
-                    // - ilmoitetaan että valinta meni väärin
+                    // - ilmoitetaan että valinta meni väärin ja soitetaan äänimerkki
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(Niilo22Muistipeli.Properties.Resources.Niilo22EipaOllu);
+                    player.Play();
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show("Väärin meni!", "hups", buttons);
                     //   molemmat kortit käännetään takaisin nurinpäin.

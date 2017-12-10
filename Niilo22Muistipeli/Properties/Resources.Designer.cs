@@ -83,6 +83,24 @@ namespace Niilo22Muistipeli.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Niilo22EipaOllu {
+            get {
+                return ResourceManager.GetStream("Niilo22EipaOllu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Niilo22MulstipeliON {
+            get {
+                return ResourceManager.GetStream("Niilo22MulstipeliON", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream Niilo22PelinLoppu {
             get {
                 return ResourceManager.GetStream("Niilo22PelinLoppu", resourceCulture);
