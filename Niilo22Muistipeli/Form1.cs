@@ -78,6 +78,8 @@ namespace Niilo22Muistipeli
         public Form1()
         {
             InitializeComponent();
+            // asetetaan formille assburger- ikoni
+            this.Icon = Niilo22Muistipeli.Properties.Resources.assburger;
             // Säilytetään pictureboxeja aputaulukossa jotta voidaan käsitellä niitä helposti loopeissa.
             pictureboksit = new PictureBox[]
             {
@@ -281,6 +283,11 @@ namespace Niilo22Muistipeli
         private void pictureBox16_Click(object sender, EventArgs e)
         {
             pictureBox_Click(sender, e, 15);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

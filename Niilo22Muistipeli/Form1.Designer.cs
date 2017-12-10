@@ -56,7 +56,6 @@
             this.laudanKoko8 = new System.Windows.Forms.ToolStripMenuItem();
             this.laudanKoko12 = new System.Windows.Forms.ToolStripMenuItem();
             this.laudanKoko16 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.kortitPanel.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -78,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.SuspendLayout();
             // 
             // kortitPanel
@@ -203,7 +201,6 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.pictureBox17);
             this.panel8.Controls.Add(this.pictureBox8);
             this.panel8.Controls.Add(this.pictureBox7);
             this.panel8.Controls.Add(this.pictureBox6);
@@ -345,8 +342,8 @@
             this.laudanKoko12,
             this.laudanKoko16});
             this.laudanKokoToolStripMenuItem.Name = "laudanKokoToolStripMenuItem";
-            this.laudanKokoToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
-            this.laudanKokoToolStripMenuItem.Text = "Laudan koko";
+            this.laudanKokoToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.laudanKokoToolStripMenuItem.Text = "Uusi peli...";
             // 
             // laudanKoko8
             // 
@@ -372,14 +369,6 @@
             this.laudanKoko16.ToolTipText = "16 korttia (4 riviä ja 4 saraketta).";
             this.laudanKoko16.Click += new System.EventHandler(this.laudanKoko16_Click);
             // 
-            // pictureBox17
-            // 
-            this.pictureBox17.Location = new System.Drawing.Point(437, 203);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(8, 8);
-            this.pictureBox17.TabIndex = 8;
-            this.pictureBox17.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,7 +378,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Niilo22 muistipeli";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.kortitPanel.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -412,7 +402,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -448,7 +437,6 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox17;
     }
 }
 
