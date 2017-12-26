@@ -195,7 +195,8 @@ namespace Niilo22Muistipeli
                         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Niilo22Muistipeli.Properties.Resources.Niilo22PelinLoppu);
                         player.Play();
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("Peli loppui!", "Game over!", buttons);
+                        MessageBox.Show("Peli loppui! Voittaja on: " + vuorossaOlevaPelaaja.Value.nimiboksi.Text, "Game over!", buttons);
+                        // TODO: korosta voittajan nimi
                         // TODO:  näytetään pisteet
                     }
                     else
