@@ -189,10 +189,6 @@ namespace Niilo22Muistipeli
                 if (juuriKlikattuPictureBox.Image == aiemminKlikattuPictureBox.Image)
                 {
 
-                    // TODO:
-                    // - jos kortti oli sama, pelaajan vuoro jatkuu (mahdollisesti annetaan visuaalinen vinkki vuoron
-                    //  jatkumisesta/ lisätään pisteitä)
-                    // - lisäksi jos kaikki kortit on käännetty, peli päättyy
                     if (loppuikoPeli())
                     {
                         // Kun peli loppuu, soitetaan äänimerkki
