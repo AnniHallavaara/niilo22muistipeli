@@ -23,7 +23,8 @@ namespace Niilo22Muistipeli
 
     public partial class Form1 : Form
     {
-        Pelaaja pelaaja1, pelaaja2, vuorossaOlevaPelaaja;
+        Pelaaja pelaaja1, pelaaja2;
+        Pelaaja? vuorossaOlevaPelaaja;
         int aiemminKlikatunKortinNumero = -1;
         int korttienMaara = 16;
         PictureBox[] pictureboksit;
@@ -42,10 +43,31 @@ namespace Niilo22Muistipeli
             nakyvissa[kortinnumero] = false;
             pbox.Image = Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
         }
+        private void vaihdaVuorossaOlevaPelaaja()
+        {
+            // poistetaan edellisen vuorossa olleen pelaajan visualisointi
+            // null- tarkistus tehdään siksi, että alussa ei ole vielä vuorossa olevaa pelaajaa
+            if (vuorossaOlevaPelaaja != null)
+            {
+                vuorossaOlevaPelaaja.Value.pelaajaLabel.ForeColor = Color.Black;
+            }
+            // vaihdetaan vuorossa oleva pelaaja
+            if (vuorossaOlevaPelaaja == null || pelaaja2.Equals(vuorossaOlevaPelaaja.Value))
+            {
+                vuorossaOlevaPelaaja = pelaaja1;
+            }
+            else
+            {
+                vuorossaOlevaPelaaja = pelaaja2;
+            }
+            // visualisoidaan vuorossa oleva pelaaja
+            vuorossaOlevaPelaaja.Value.pelaajaLabel.ForeColor = Color.Red;
+
+        }
         private void alustaPelilauta()
         {
-            // asetetaan vuorossa oleva pelaaja
-            vuorossaOlevaPelaaja = pelaaja1;
+            vuorossaOlevaPelaaja = null;
+            vaihdaVuorossaOlevaPelaaja();
 
             // nollataan pelaajien oikeat ja väärät arvaukset
             pelaaja1.oikeinArvatut = 0;
@@ -110,12 +132,12 @@ namespace Niilo22Muistipeli
                 pictureBox6, pictureBox7, pictureBox8, pictureBox9, pictureBox10,
                 pictureBox11, pictureBox12, pictureBox13, pictureBox14, pictureBox15, pictureBox16
             };
-            alustaPelilauta();
-
+            
             pelaaja1.pelaajaLabel = lblPelaaja1;
             pelaaja1.nimiboksi = tbPelaaja1;
             pelaaja2.pelaajaLabel = lblPelaaja2;
-            pelaaja2.nimiboksi = tbPelaaja2; 
+            pelaaja2.nimiboksi = tbPelaaja2;
+            alustaPelilauta();
         }
 
         private bool ensimmaistaKaantamassa()
@@ -177,7 +199,7 @@ namespace Niilo22Muistipeli
                         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Niilo22Muistipeli.Properties.Resources.Niilo22PelinLoppu);
                         player.Play();
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("Peli loppui!", "Game over", buttons);
+                        MessageBox.Show("Peli loppui!", "Game over!", buttons);
                         // TODO:  näytetään pisteet
                     }
                     else
@@ -195,11 +217,12 @@ namespace Niilo22Muistipeli
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(Niilo22Muistipeli.Properties.Resources.Niilo22EipaOllu);
                     player.Play();
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show("Väärin meni!", "hups", buttons);
+                    MessageBox.Show("Väärin meni!", "Hups!", buttons);
                     //   molemmat kortit käännetään takaisin nurinpäin.
                     naytaKysymysmerkki(aiemminKlikatunKortinNumero, aiemminKlikattuPictureBox);
                     naytaKysymysmerkki(juuriKlikatunKortinNumero, juuriKlikattuPictureBox);
-                    // TODO: pelaajan vuoro päättyy
+                    // pelaajan vuoro päättyy
+                    vaihdaVuorossaOlevaPelaaja();
                 }
                 // unohdetaan aiemmin klikattu kortti
                 aiemminKlikatunKortinNumero = -1;
