@@ -366,8 +366,8 @@
             this.yksinpeliToolStripMenuItem,
             this.kaksinpeliToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(89, 20);
-            this.toolStripMenuItem1.Text = "Pelaajamäärä";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(98, 20);
+            this.toolStripMenuItem1.Text = "Pelaajamäärä...";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // yksinpeliToolStripMenuItem
@@ -375,12 +375,14 @@
             this.yksinpeliToolStripMenuItem.Name = "yksinpeliToolStripMenuItem";
             this.yksinpeliToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.yksinpeliToolStripMenuItem.Text = "Yksinpeli";
+            this.yksinpeliToolStripMenuItem.Click += new System.EventHandler(this.yksinpeliToolStripMenuItem_Click);
             // 
             // kaksinpeliToolStripMenuItem
             // 
             this.kaksinpeliToolStripMenuItem.Name = "kaksinpeliToolStripMenuItem";
             this.kaksinpeliToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.kaksinpeliToolStripMenuItem.Text = "Kaksinpeli";
+            this.kaksinpeliToolStripMenuItem.Click += new System.EventHandler(this.kaksinpeliToolStripMenuItem_Click);
             // 
             // laudanKokoToolStripMenuItem
             // 
@@ -435,6 +437,7 @@
             this.lblPelaaja2.Size = new System.Drawing.Size(74, 20);
             this.lblPelaaja2.TabIndex = 3;
             this.lblPelaaja2.Text = "Pelaaja 2";
+            this.lblPelaaja2.Click += new System.EventHandler(this.lblPelaaja2_Click);
             // 
             // tbPelaaja1
             // 

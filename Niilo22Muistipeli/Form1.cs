@@ -19,10 +19,9 @@ namespace Niilo22Muistipeli
         public int vaarinArvatut;
     }
 
-
-
     public partial class Form1 : Form
     {
+        bool onkoYksinpeli = false;
         Pelaaja pelaaja1, pelaaja2;
         Pelaaja? vuorossaOlevaPelaaja;
         int aiemminKlikatunKortinNumero = -1;
@@ -43,7 +42,7 @@ namespace Niilo22Muistipeli
             nakyvissa[kortinnumero] = false;
             pbox.Image = Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
         }
-        private void vaihdaVuorossaOlevaPelaaja()
+        private void vaihdaVuorossaOlevaPelaaja(bool pakotaPelaaja1)
         {
             // poistetaan edellisen vuorossa olleen pelaajan visualisointi
             // null- tarkistus tehdään siksi, että alussa ei ole vielä vuorossa olevaa pelaajaa
@@ -52,7 +51,7 @@ namespace Niilo22Muistipeli
                 vuorossaOlevaPelaaja.Value.pelaajaLabel.ForeColor = Color.Black;
             }
             // vaihdetaan vuorossa oleva pelaaja
-            if (vuorossaOlevaPelaaja == null || pelaaja2.Equals(vuorossaOlevaPelaaja.Value))
+            if (pakotaPelaaja1 || pelaaja2.Equals(vuorossaOlevaPelaaja.Value))
             {
                 vuorossaOlevaPelaaja = pelaaja1;
             }
@@ -64,10 +63,9 @@ namespace Niilo22Muistipeli
             vuorossaOlevaPelaaja.Value.pelaajaLabel.ForeColor = Color.Red;
             
         }
-        private void alustaPelilauta()
+        private void AlustaPelilauta()
         {
-            vuorossaOlevaPelaaja = null;
-            vaihdaVuorossaOlevaPelaaja();
+            vaihdaVuorossaOlevaPelaaja(true);
 
             // nollataan pelaajien oikeat ja väärät arvaukset
             pelaaja1.oikeinArvatut = 0;
@@ -137,7 +135,7 @@ namespace Niilo22Muistipeli
             pelaaja1.nimiboksi = tbPelaaja1;
             pelaaja2.pelaajaLabel = lblPelaaja2;
             pelaaja2.nimiboksi = tbPelaaja2;
-            alustaPelilauta();
+            AlustaPelilauta();
         }
 
         private bool ensimmaistaKaantamassa()
@@ -219,7 +217,7 @@ namespace Niilo22Muistipeli
                     naytaKysymysmerkki(aiemminKlikatunKortinNumero, aiemminKlikattuPictureBox);
                     naytaKysymysmerkki(juuriKlikatunKortinNumero, juuriKlikattuPictureBox);
                     // pelaajan vuoro päättyy
-                    vaihdaVuorossaOlevaPelaaja();
+                    vaihdaVuorossaOlevaPelaaja(onkoYksinpeli);
                 }
                 // unohdetaan aiemmin klikattu kortti
                 aiemminKlikatunKortinNumero = -1;
@@ -278,19 +276,19 @@ namespace Niilo22Muistipeli
         private void laudanKoko8_Click(object sender, EventArgs e)
         {
             korttienMaara = 8;
-            alustaPelilauta();
+            AlustaPelilauta();
         }
 
         private void laudanKoko12_Click(object sender, EventArgs e)
         {
             korttienMaara = 12;
-            alustaPelilauta();
+            AlustaPelilauta();
         }
 
         private void laudanKoko16_Click(object sender, EventArgs e)
         {
             korttienMaara = 16;
-            alustaPelilauta();
+            AlustaPelilauta();
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
@@ -339,6 +337,27 @@ namespace Niilo22Muistipeli
         }
 
         private void btnTilastot_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void yksinpeliToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            onkoYksinpeli = true;
+            AlustaPelilauta();
+            lblPelaaja2.Visible = false;
+            tbPelaaja2.Visible = false;
+        }
+
+        private void kaksinpeliToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            onkoYksinpeli = false;
+            AlustaPelilauta();
+            lblPelaaja2.Visible = true;
+            tbPelaaja2.Visible = true;
+        }
+
+        private void lblPelaaja2_Click(object sender, EventArgs e)
         {
 
         }
