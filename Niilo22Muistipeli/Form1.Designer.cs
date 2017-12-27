@@ -61,6 +61,7 @@
             this.tbPelaaja1 = new System.Windows.Forms.TextBox();
             this.tbPelaaja2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTilastot = new System.Windows.Forms.Button();
             this.kortitPanel.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -109,8 +110,8 @@
             // pictureBox13
             // 
             this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox13.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox13.Location = new System.Drawing.Point(5, 7);
+            this.pictureBox13.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
+            this.pictureBox13.Location = new System.Drawing.Point(3, 4);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(115, 119);
             this.pictureBox13.TabIndex = 8;
@@ -120,8 +121,8 @@
             // pictureBox14
             // 
             this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox14.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox14.Location = new System.Drawing.Point(142, 7);
+            this.pictureBox14.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
+            this.pictureBox14.Location = new System.Drawing.Point(142, 4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(115, 119);
             this.pictureBox14.TabIndex = 7;
@@ -131,7 +132,7 @@
             // pictureBox15
             // 
             this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox15.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox15.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
             this.pictureBox15.Location = new System.Drawing.Point(275, 4);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(115, 119);
@@ -142,7 +143,7 @@
             // pictureBox16
             // 
             this.pictureBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox16.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox16.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
             this.pictureBox16.Location = new System.Drawing.Point(403, 4);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(115, 119);
@@ -164,7 +165,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox12.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox12.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
             this.pictureBox12.Location = new System.Drawing.Point(403, 3);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(115, 119);
@@ -175,8 +176,8 @@
             // pictureBox11
             // 
             this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox11.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox11.Location = new System.Drawing.Point(273, 4);
+            this.pictureBox11.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
+            this.pictureBox11.Location = new System.Drawing.Point(273, 3);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(115, 119);
             this.pictureBox11.TabIndex = 7;
@@ -186,8 +187,8 @@
             // pictureBox9
             // 
             this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox9.Location = new System.Drawing.Point(0, 7);
+            this.pictureBox9.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
+            this.pictureBox9.Location = new System.Drawing.Point(0, 3);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(115, 119);
             this.pictureBox9.TabIndex = 5;
@@ -197,8 +198,8 @@
             // pictureBox10
             // 
             this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox10.Location = new System.Drawing.Point(140, 4);
+            this.pictureBox10.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
+            this.pictureBox10.Location = new System.Drawing.Point(140, 3);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(115, 119);
             this.pictureBox10.TabIndex = 6;
@@ -223,8 +224,8 @@
             // pictureBox8
             // 
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox8.Location = new System.Drawing.Point(401, 142);
+            this.pictureBox8.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
+            this.pictureBox8.Location = new System.Drawing.Point(402, 142);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(115, 119);
             this.pictureBox8.TabIndex = 7;
@@ -234,8 +235,8 @@
             // pictureBox7
             // 
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox7.Location = new System.Drawing.Point(273, 139);
+            this.pictureBox7.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
+            this.pictureBox7.Location = new System.Drawing.Point(273, 142);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(115, 119);
             this.pictureBox7.TabIndex = 6;
@@ -245,7 +246,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox6.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
             this.pictureBox6.Location = new System.Drawing.Point(140, 142);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(115, 119);
@@ -256,8 +257,8 @@
             // pictureBox5
             // 
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 139);
+            this.pictureBox5.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
+            this.pictureBox5.Location = new System.Drawing.Point(3, 141);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(115, 119);
             this.pictureBox5.TabIndex = 4;
@@ -267,7 +268,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox4.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
             this.pictureBox4.Location = new System.Drawing.Point(404, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(115, 119);
@@ -278,7 +279,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox3.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
             this.pictureBox3.Location = new System.Drawing.Point(273, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(115, 119);
@@ -289,7 +290,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox2.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
             this.pictureBox2.Location = new System.Drawing.Point(140, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(115, 119);
@@ -300,7 +301,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            this.pictureBox1.Image = global::Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(115, 119);
@@ -399,18 +400,18 @@
             // 
             this.tbPelaaja1.Location = new System.Drawing.Point(9, 49);
             this.tbPelaaja1.Name = "tbPelaaja1";
-            this.tbPelaaja1.Size = new System.Drawing.Size(100, 20);
+            this.tbPelaaja1.Size = new System.Drawing.Size(125, 20);
             this.tbPelaaja1.TabIndex = 4;
-            this.tbPelaaja1.Text = "Mikael";
+            this.tbPelaaja1.Text = "Kirjoita pelaaja1:n nimi";
             this.tbPelaaja1.TextChanged += new System.EventHandler(this.tbPelaaja1_TextChanged);
             // 
             // tbPelaaja2
             // 
             this.tbPelaaja2.Location = new System.Drawing.Point(9, 124);
             this.tbPelaaja2.Name = "tbPelaaja2";
-            this.tbPelaaja2.Size = new System.Drawing.Size(100, 20);
+            this.tbPelaaja2.Size = new System.Drawing.Size(125, 20);
             this.tbPelaaja2.TabIndex = 5;
-            this.tbPelaaja2.Text = "Onni";
+            this.tbPelaaja2.Text = "Kirjoita pelaaja2:n nimi";
             // 
             // panel1
             // 
@@ -418,16 +419,27 @@
             this.panel1.Controls.Add(this.lblPelaaja2);
             this.panel1.Controls.Add(this.tbPelaaja2);
             this.panel1.Controls.Add(this.lblPelaaja1);
-            this.panel1.Location = new System.Drawing.Point(3, 273);
+            this.panel1.Location = new System.Drawing.Point(3, 99);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(155, 213);
             this.panel1.TabIndex = 6;
+            // 
+            // btnTilastot
+            // 
+            this.btnTilastot.Location = new System.Drawing.Point(27, 402);
+            this.btnTilastot.Name = "btnTilastot";
+            this.btnTilastot.Size = new System.Drawing.Size(75, 23);
+            this.btnTilastot.TabIndex = 7;
+            this.btnTilastot.Text = "Tilastot";
+            this.btnTilastot.UseVisualStyleBackColor = true;
+            this.btnTilastot.Click += new System.EventHandler(this.btnTilastot_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 628);
+            this.Controls.Add(this.btnTilastot);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.kortitPanel);
             this.Controls.Add(this.menuStrip1);
@@ -499,6 +511,7 @@
         private System.Windows.Forms.TextBox tbPelaaja1;
         private System.Windows.Forms.TextBox tbPelaaja2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnTilastot;
     }
 }
 

@@ -62,7 +62,7 @@ namespace Niilo22Muistipeli
             }
             // visualisoidaan vuorossa oleva pelaaja
             vuorossaOlevaPelaaja.Value.pelaajaLabel.ForeColor = Color.Red;
-
+            
         }
         private void alustaPelilauta()
         {
@@ -334,6 +334,11 @@ namespace Niilo22Muistipeli
         }
 
         private void tbPelaaja1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTilastot_Click(object sender, EventArgs e)
         {
 
         }
