@@ -41,7 +41,7 @@ namespace Niilo22Muistipeli
         private void naytaKysymysmerkki(int kortinnumero, PictureBox pbox)
         {
             nakyvissa[kortinnumero] = false;
-            pbox.Image = Niilo22Muistipeli.Properties.Resources.NiilonKysymysmerkki;
+            pbox.Image = Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
         }
         private void vaihdaVuorossaOlevaPelaaja()
         {
@@ -331,6 +331,11 @@ namespace Niilo22Muistipeli
         private void pictureBox16_Click(object sender, EventArgs e)
         {
             pictureBox_Click(sender, e, 15);
+        }
+
+        private void tbPelaaja1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -402,6 +402,7 @@
             this.tbPelaaja1.Size = new System.Drawing.Size(100, 20);
             this.tbPelaaja1.TabIndex = 4;
             this.tbPelaaja1.Text = "Mikael";
+            this.tbPelaaja1.TextChanged += new System.EventHandler(this.tbPelaaja1_TextChanged);
             // 
             // tbPelaaja2
             // 

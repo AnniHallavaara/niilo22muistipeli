@@ -73,6 +73,16 @@ namespace Niilo22Muistipeli.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap KysymysmerkkiEmoji {
+            get {
+                object obj = ResourceManager.GetObject("KysymysmerkkiEmoji", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Niilo1_pieni {
             get {
                 object obj = ResourceManager.GetObject("Niilo1_pieni", resourceCulture);
@@ -143,6 +153,16 @@ namespace Niilo22Muistipeli.Properties {
         internal static System.Drawing.Bitmap NiilonKysymysmerkki {
             get {
                 object obj = ResourceManager.GetObject("NiilonKysymysmerkki", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NiilonKysymysmerkkiPieni {
+            get {
+                object obj = ResourceManager.GetObject("NiilonKysymysmerkkiPieni", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
