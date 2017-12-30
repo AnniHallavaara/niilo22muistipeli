@@ -21,6 +21,8 @@ namespace Niilo22Muistipeli
         public int oikeinArvatut;
         public int vaarinArvatut;
     }
+
+
     // tietue pisteitä varten
     public struct Pisterivi
     {
@@ -106,6 +108,8 @@ namespace Niilo22Muistipeli
 
             }
         }
+
+
         private void LataaPisteet()
         {
             StreamReader sr = null;
@@ -128,11 +132,15 @@ namespace Niilo22Muistipeli
                     
             }
         }
+
+
         private void NaytaKysymysmerkki(int kortinnumero, PictureBox pbox)
         {
             nakyvissa[kortinnumero] = false;
             pbox.Image = Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
         }
+
+
         private void VaihdaVuorossaOlevaPelaaja(bool pakotaPelaaja1)
         {
             // poistetaan edellisen vuorossa olleen pelaajan visualisointi
@@ -154,6 +162,8 @@ namespace Niilo22Muistipeli
             vuorossaOlevaPelaaja.Value.pelaajaLabel.ForeColor = Color.Red;
             
         }
+
+
         private void AlustaPelilauta()
         {
             VaihdaVuorossaOlevaPelaaja(true);
@@ -208,6 +218,7 @@ namespace Niilo22Muistipeli
             Random r = new Random();
             kuvat = kuvat.OrderBy(x => r.Next()).ToArray();
         }
+
 
         public Pelialusta()
         {
@@ -274,8 +285,8 @@ namespace Niilo22Muistipeli
             }
             else
             {
-
-                //      -  vertaillaan juuri käännetyn kortin imagea aiemmin käännetyn kortin imageen
+                // ollaan klikkaamassa vuoron toista korttia
+                // vertaillaan juuri käännetyn kortin imagea aiemmin käännetyn kortin imageen
                 PictureBox aiemminKlikattuPictureBox = pictureboksit[aiemminKlikatunKortinNumero];
                 if (juuriKlikattuPictureBox.Image == aiemminKlikattuPictureBox.Image)
                 {
@@ -301,7 +312,6 @@ namespace Niilo22Muistipeli
 
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show("Peli loppui! Voittaja on: " + voittajanNimi, "Game over!", buttons);
-                        // TODO: korosta voittajan nimi
 
                         // päivitetään pisteet
                         PaivitaPisteLista(voittajanNimi, haviajanNimi);
@@ -335,6 +345,7 @@ namespace Niilo22Muistipeli
 
             }
         }
+
 
         private void PaivitaPisteLista(string voittajanNimi, string haviajanNimi)
         {
@@ -502,7 +513,6 @@ namespace Niilo22Muistipeli
 
         private void NaytaPisteikkuna()
         {
-
             Pisteikkuna akkuna = new Pisteikkuna();
             akkuna.AsetaPisteet(pisteet);
             akkuna.ShowDialog(this);
