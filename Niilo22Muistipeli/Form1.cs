@@ -18,18 +18,56 @@ namespace Niilo22Muistipeli
         public int oikeinArvatut;
         public int vaarinArvatut;
     }
+    // tietue pisteitä varten
+    public struct Pisteet
+    {
+        public int voitot;
+        public int haviot;
+        public string nimi;
+        
+        public int Voitot
+        {
+            get
+            {
+                return voitot;
+            }
+        }
+        public int Haviot
+        {
+            get
+            {
+                return haviot;
+            }
+        }
+        public string Nimi
+        {
+            get
+            {
+                return nimi;
+            }
+        }
+    }
 
     public partial class Form1 : Form
     {
         bool onkoYksinpeli = false;
+
         Pelaaja pelaaja1, pelaaja2;
+
         Pelaaja? vuorossaOlevaPelaaja;
+
         int aiemminKlikatunKortinNumero = -1;
+
         int korttienMaara = 16;
+
         PictureBox[] pictureboksit;
+
         bool[] nakyvissa;
+
         Bitmap[] kuvat;
+
         Bitmap[] niilot = new Bitmap[]
+
         {
             Niilo22Muistipeli.Properties.Resources.Niilo1_pieni,
             Niilo22Muistipeli.Properties.Resources.Niilo2_pieni,
@@ -195,7 +233,9 @@ namespace Niilo22Muistipeli
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
                         MessageBox.Show("Peli loppui! Voittaja on: " + vuorossaOlevaPelaaja.Value.nimiboksi.Text, "Game over!", buttons);
                         // TODO: korosta voittajan nimi
-                        // TODO:  näytetään pisteet
+
+                        // näytetään pisteet
+                        NaytaPisteikkuna();
                     }
                     else
                     {
@@ -338,8 +378,16 @@ namespace Niilo22Muistipeli
 
         private void btnTilastot_Click(object sender, EventArgs e)
         {
-
+            NaytaPisteikkuna();
         }
+
+        private void NaytaPisteikkuna()
+        {
+            Pisteikkuna akkuna = new Pisteikkuna();
+
+            akkuna.ShowDialog(this);
+        }
+
 
         private void yksinpeliToolStripMenuItem_Click(object sender, EventArgs e)
         {

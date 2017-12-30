@@ -445,7 +445,6 @@
             this.tbPelaaja1.Name = "tbPelaaja1";
             this.tbPelaaja1.Size = new System.Drawing.Size(125, 20);
             this.tbPelaaja1.TabIndex = 4;
-            this.tbPelaaja1.Text = "Kirjoita pelaaja1:n nimi";
             this.tbPelaaja1.TextChanged += new System.EventHandler(this.tbPelaaja1_TextChanged);
             // 
             // tbPelaaja2
@@ -454,7 +453,6 @@
             this.tbPelaaja2.Name = "tbPelaaja2";
             this.tbPelaaja2.Size = new System.Drawing.Size(125, 20);
             this.tbPelaaja2.TabIndex = 5;
-            this.tbPelaaja2.Text = "Kirjoita pelaaja2:n nimi";
             // 
             // panel1
             // 
