@@ -7,9 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace Niilo22Muistipeli
 {
+
     // tietue pelaajatietoja varten
     public struct Pelaaja
     {
@@ -51,6 +54,8 @@ namespace Niilo22Muistipeli
 
     public partial class Pelialusta : Form
     {
+        public string pistetiedosto = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "\\niilo22muistipeli.xml";
+
         bool onkoYksinpeli = false;
 
         Pelaaja pelaaja1, pelaaja2;
@@ -77,6 +82,52 @@ namespace Niilo22Muistipeli
             Niilo22Muistipeli.Properties.Resources.Niilo4_pieni,
         };
 
+        private void TallennaPisteet()
+        {
+            StreamWriter sw = null;
+            try
+            {
+                sw = new StreamWriter(pistetiedosto);
+                XmlSerializer ser = new XmlSerializer(typeof(List<Pisterivi>));
+                ser.Serialize(sw, pisteet);
+
+            }
+            catch (Exception e)
+            {
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show("Voi voi, pisteiden tallennus epäonnistui: " + e, "Virhe!", buttons);
+            }
+            finally
+            {
+                if (sw != null)
+                {
+                    sw.Close();
+                }
+
+            }
+        }
+        private void LataaPisteet()
+        {
+            StreamReader sr = null;
+            try
+            {
+                sr = new StreamReader(pistetiedosto);
+                XmlSerializer ser = new XmlSerializer(typeof(List<Pisterivi>));
+                pisteet = (List<Pisterivi>)ser.Deserialize(sr);
+               
+            } catch (Exception e)
+            {
+                // hyväksytään virheet eikä tehdä mitään
+            }
+            finally
+            {
+                if (sr!= null)
+                {
+                    sr.Close();
+                }
+                    
+            }
+        }
         private void NaytaKysymysmerkki(int kortinnumero, PictureBox pbox)
         {
             nakyvissa[kortinnumero] = false;
@@ -161,6 +212,8 @@ namespace Niilo22Muistipeli
         public Pelialusta()
         {
             InitializeComponent();
+            // ladataan pisteet
+            LataaPisteet();
             // asetetaan formille assburger- ikoni
             this.Icon = Niilo22Muistipeli.Properties.Resources.assburger;
             // Säilytetään pictureboxeja aputaulukossa jotta voidaan käsitellä niitä helposti loopeissa.
@@ -297,13 +350,7 @@ namespace Niilo22Muistipeli
                     rivi.voitot = rivi.voitot + 1;
                     pisteet[i] = rivi;
                     voittajaLoytyi = true;
-                }
-                if (rivi.nimi == haviajanNimi && !onkoYksinpeli)
-                {
-                    // lisätään häviö paitsi yksinpelissä
-                    rivi.haviot = rivi.haviot + 1;
-                    pisteet[i] = rivi;
-                    haviajaLoytyi = true;
+                    break;
                 }
             }
             if (voittajaLoytyi == false)
@@ -315,6 +362,19 @@ namespace Niilo22Muistipeli
                 voittajarivi.haviot = 0;
                 pisteet.Add(voittajarivi);
             }
+            for (i = 0; i < pisteet.Count; i++)
+            {
+                Pisterivi rivi = pisteet[i];
+                
+                if (rivi.nimi == haviajanNimi && !onkoYksinpeli && !haviajaLoytyi)
+                {
+                    // lisätään häviö paitsi yksinpelissä
+                    rivi.haviot = rivi.haviot + 1;
+                    pisteet[i] = rivi;
+                    haviajaLoytyi = true;
+                    break;
+                }
+            }
             if (haviajaLoytyi == false && !onkoYksinpeli)
             {
                 // jos häviäjää ei ole löytynyt, se lisätään paitsi yksinpelissä
@@ -324,6 +384,8 @@ namespace Niilo22Muistipeli
                 haviajarivi.haviot = 1;
                 pisteet.Add(haviajarivi);
             }
+            // tallennetaan pisteet
+            TallennaPisteet();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
