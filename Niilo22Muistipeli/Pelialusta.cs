@@ -77,12 +77,12 @@ namespace Niilo22Muistipeli
             Niilo22Muistipeli.Properties.Resources.Niilo4_pieni,
         };
 
-        private void naytaKysymysmerkki(int kortinnumero, PictureBox pbox)
+        private void NaytaKysymysmerkki(int kortinnumero, PictureBox pbox)
         {
             nakyvissa[kortinnumero] = false;
             pbox.Image = Niilo22Muistipeli.Properties.Resources.KysymysmerkkiEmoji;
         }
-        private void vaihdaVuorossaOlevaPelaaja(bool pakotaPelaaja1)
+        private void VaihdaVuorossaOlevaPelaaja(bool pakotaPelaaja1)
         {
             // poistetaan edellisen vuorossa olleen pelaajan visualisointi
             // null- tarkistus tehdään siksi, että alussa ei ole vielä vuorossa olevaa pelaajaa
@@ -105,7 +105,7 @@ namespace Niilo22Muistipeli
         }
         private void AlustaPelilauta()
         {
-            vaihdaVuorossaOlevaPelaaja(true);
+            VaihdaVuorossaOlevaPelaaja(true);
 
             // nollataan pelaajien oikeat ja väärät arvaukset
             pelaaja1.oikeinArvatut = 0;
@@ -133,7 +133,7 @@ namespace Niilo22Muistipeli
             int i;
             for (i = 0; i < korttienMaara; i++)
             {
-                naytaKysymysmerkki(i, pictureboksit[i]);
+                NaytaKysymysmerkki(i, pictureboksit[i]);
             }
 
             // Täytetään kuvat- taulukkoon tarvittava määrä kuvapareja
@@ -178,7 +178,7 @@ namespace Niilo22Muistipeli
             AlustaPelilauta();
         }
 
-        private bool ensimmaistaKaantamassa()
+        private bool EnsimmaistaKaantamassa()
         {
             if (aiemminKlikatunKortinNumero == -1)
                 return true;
@@ -186,7 +186,7 @@ namespace Niilo22Muistipeli
                 return false;
         }
 
-        private bool loppuikoPeli()
+        private bool LoppuikoPeli()
         {
             if (nakyvissa.Contains(false))
                 return false;
@@ -194,7 +194,7 @@ namespace Niilo22Muistipeli
                 return true;
         }
 
-        private void pictureBox_Click(object sender, EventArgs e, int juuriKlikatunKortinNumero)
+        private void PictureBox_Click(object sender, EventArgs e, int juuriKlikatunKortinNumero)
         {
 
 
@@ -212,7 +212,7 @@ namespace Niilo22Muistipeli
             nakyvissa[juuriKlikatunKortinNumero] = true;
 
 
-            if (ensimmaistaKaantamassa())
+            if (EnsimmaistaKaantamassa())
             {
                 // Kun ollaan klikkaamassa vuoron ensimmäistä korttia
                 // tallennetaan valitun kortin numero
@@ -227,7 +227,7 @@ namespace Niilo22Muistipeli
                 if (juuriKlikattuPictureBox.Image == aiemminKlikattuPictureBox.Image)
                 {
 
-                    if (loppuikoPeli())
+                    if (LoppuikoPeli())
                     {
                         // Kun peli loppuu, soitetaan äänimerkki
                         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Niilo22Muistipeli.Properties.Resources.Niilo22PelinLoppu);
@@ -256,10 +256,10 @@ namespace Niilo22Muistipeli
                     MessageBoxButtons buttons = MessageBoxButtons.OK;
                     MessageBox.Show("Väärin meni!", "Hups!", buttons);
                     //   molemmat kortit käännetään takaisin nurinpäin.
-                    naytaKysymysmerkki(aiemminKlikatunKortinNumero, aiemminKlikattuPictureBox);
-                    naytaKysymysmerkki(juuriKlikatunKortinNumero, juuriKlikattuPictureBox);
+                    NaytaKysymysmerkki(aiemminKlikatunKortinNumero, aiemminKlikattuPictureBox);
+                    NaytaKysymysmerkki(juuriKlikatunKortinNumero, juuriKlikattuPictureBox);
                     // pelaajan vuoro päättyy
-                    vaihdaVuorossaOlevaPelaaja(onkoYksinpeli);
+                    VaihdaVuorossaOlevaPelaaja(onkoYksinpeli);
                 }
                 // unohdetaan aiemmin klikattu kortti
                 aiemminKlikatunKortinNumero = -1;
@@ -273,41 +273,41 @@ namespace Niilo22Muistipeli
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 0);
+            PictureBox_Click(sender, e, 0);
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 1);
+            PictureBox_Click(sender, e, 1);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 2);
+            PictureBox_Click(sender, e, 2);
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 3);
+            PictureBox_Click(sender, e, 3);
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 4);
+            PictureBox_Click(sender, e, 4);
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 5);
+            PictureBox_Click(sender, e, 5);
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 6);
+            PictureBox_Click(sender, e, 6);
         }
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 7);
+            PictureBox_Click(sender, e, 7);
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -335,42 +335,42 @@ namespace Niilo22Muistipeli
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 8);
+            PictureBox_Click(sender, e, 8);
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 9);
+            PictureBox_Click(sender, e, 9);
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 10);
+            PictureBox_Click(sender, e, 10);
         }
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 11);
+            PictureBox_Click(sender, e, 11);
         }
 
         private void pictureBox13_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 12);
+            PictureBox_Click(sender, e, 12);
         }
 
         private void pictureBox14_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 13);
+            PictureBox_Click(sender, e, 13);
         }
 
         private void pictureBox15_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 14);
+            PictureBox_Click(sender, e, 14);
         }
 
         private void pictureBox16_Click(object sender, EventArgs e)
         {
-            pictureBox_Click(sender, e, 15);
+            PictureBox_Click(sender, e, 15);
         }
 
         private void tbPelaaja1_TextChanged(object sender, EventArgs e)
