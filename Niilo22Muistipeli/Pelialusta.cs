@@ -232,10 +232,26 @@ namespace Niilo22Muistipeli
                         // Kun peli loppuu, soitetaan äänimerkki
                         System.Media.SoundPlayer player = new System.Media.SoundPlayer(Niilo22Muistipeli.Properties.Resources.Niilo22PelinLoppu);
                         player.Play();
+
+                        // otetaan voittajan ja häviäjän nimet talteen
+                        string voittajanNimi = vuorossaOlevaPelaaja.Value.nimiboksi.Text;
+                        string haviajanNimi;
+                        // häviäjä on ei vuorossa oleva pelaaja
+                        if (pelaaja1.Equals(vuorossaOlevaPelaaja.Value))
+                        {
+                            haviajanNimi = pelaaja2.nimiboksi.Text;
+                        }
+                        else
+                        {
+                            haviajanNimi = pelaaja1.nimiboksi.Text;
+                        }
+
                         MessageBoxButtons buttons = MessageBoxButtons.OK;
-                        MessageBox.Show("Peli loppui! Voittaja on: " + vuorossaOlevaPelaaja.Value.nimiboksi.Text, "Game over!", buttons);
+                        MessageBox.Show("Peli loppui! Voittaja on: " + voittajanNimi, "Game over!", buttons);
                         // TODO: korosta voittajan nimi
 
+                        // päivitetään pisteet
+                        PaivitaPisteLista(voittajanNimi, haviajanNimi);
                         // näytetään pisteet
                         NaytaPisteikkuna();
                     }
@@ -264,11 +280,50 @@ namespace Niilo22Muistipeli
                 // unohdetaan aiemmin klikattu kortti
                 aiemminKlikatunKortinNumero = -1;
 
-
             }
+        }
 
-
-
+        private void PaivitaPisteLista(string voittajanNimi, string haviajanNimi)
+        {
+            bool voittajaLoytyi = false;
+            bool haviajaLoytyi = false;
+            int i; 
+            for (i = 0; i < pisteet.Count; i++)
+            {
+                Pisterivi rivi = pisteet[i];
+                if (rivi.nimi == voittajanNimi)
+                {
+                    // lisätään voitto
+                    rivi.voitot = rivi.voitot + 1;
+                    pisteet[i] = rivi;
+                    voittajaLoytyi = true;
+                }
+                if (rivi.nimi == haviajanNimi && !onkoYksinpeli)
+                {
+                    // lisätään häviö paitsi yksinpelissä
+                    rivi.haviot = rivi.haviot + 1;
+                    pisteet[i] = rivi;
+                    haviajaLoytyi = true;
+                }
+            }
+            if (voittajaLoytyi == false)
+            {
+                // jos voittajaa ei ole löytynyt, se lisätään
+                Pisterivi voittajarivi;
+                voittajarivi.nimi = voittajanNimi;
+                voittajarivi.voitot = 1;
+                voittajarivi.haviot = 0;
+                pisteet.Add(voittajarivi);
+            }
+            if (haviajaLoytyi == false && !onkoYksinpeli)
+            {
+                // jos häviäjää ei ole löytynyt, se lisätään paitsi yksinpelissä
+                Pisterivi haviajarivi;
+                haviajarivi.nimi = haviajanNimi;
+                haviajarivi.voitot = 0;
+                haviajarivi.haviot = 1;
+                pisteet.Add(haviajarivi);
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

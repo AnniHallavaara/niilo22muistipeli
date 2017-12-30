@@ -373,14 +373,14 @@
             // yksinpeliToolStripMenuItem
             // 
             this.yksinpeliToolStripMenuItem.Name = "yksinpeliToolStripMenuItem";
-            this.yksinpeliToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.yksinpeliToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.yksinpeliToolStripMenuItem.Text = "Yksinpeli";
             this.yksinpeliToolStripMenuItem.Click += new System.EventHandler(this.yksinpeliToolStripMenuItem_Click);
             // 
             // kaksinpeliToolStripMenuItem
             // 
             this.kaksinpeliToolStripMenuItem.Name = "kaksinpeliToolStripMenuItem";
-            this.kaksinpeliToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kaksinpeliToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.kaksinpeliToolStripMenuItem.Text = "Kaksinpeli";
             this.kaksinpeliToolStripMenuItem.Click += new System.EventHandler(this.kaksinpeliToolStripMenuItem_Click);
             // 
@@ -460,14 +460,14 @@
             this.panel1.Controls.Add(this.lblPelaaja2);
             this.panel1.Controls.Add(this.tbPelaaja2);
             this.panel1.Controls.Add(this.lblPelaaja1);
-            this.panel1.Location = new System.Drawing.Point(3, 99);
+            this.panel1.Location = new System.Drawing.Point(12, 99);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(155, 213);
             this.panel1.TabIndex = 6;
             // 
             // btnTilastot
             // 
-            this.btnTilastot.Location = new System.Drawing.Point(27, 402);
+            this.btnTilastot.Location = new System.Drawing.Point(40, 371);
             this.btnTilastot.Name = "btnTilastot";
             this.btnTilastot.Size = new System.Drawing.Size(75, 23);
             this.btnTilastot.TabIndex = 7;
@@ -475,7 +475,7 @@
             this.btnTilastot.UseVisualStyleBackColor = true;
             this.btnTilastot.Click += new System.EventHandler(this.btnTilastot_Click);
             // 
-            // Form1
+            // Pelialusta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -485,7 +485,7 @@
             this.Controls.Add(this.kortitPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Pelialusta";
             this.Text = "Niilo22 muistipeli";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.kortitPanel.ResumeLayout(false);
