@@ -15,6 +15,8 @@ namespace Niilo22Muistipeli
         public Pisteikkuna()
         {
             InitializeComponent();
+            // asetetaan formille assburger- ikoni
+            this.Icon = Niilo22Muistipeli.Properties.Resources.assburger;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Niilo22Muistipeli
 {
-    partial class Form1
+    partial class Pelialusta
     {
         /// <summary>
         /// Required designer variable.

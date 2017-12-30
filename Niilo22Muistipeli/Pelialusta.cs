@@ -48,7 +48,7 @@ namespace Niilo22Muistipeli
         }
     }
 
-    public partial class Form1 : Form
+    public partial class Pelialusta : Form
     {
         bool onkoYksinpeli = false;
 
@@ -156,7 +156,7 @@ namespace Niilo22Muistipeli
             kuvat = kuvat.OrderBy(x => r.Next()).ToArray();
         }
 
-        public Form1()
+        public Pelialusta()
         {
             InitializeComponent();
             // asetetaan formille assburger- ikoni
