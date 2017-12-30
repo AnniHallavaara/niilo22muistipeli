@@ -18,5 +18,9 @@ namespace Niilo22Muistipeli
             // asetetaan formille assburger- ikoni
             this.Icon = Niilo22Muistipeli.Properties.Resources.assburger;
         }
+        public void AsetaPisteet(List<Pisterivi> pisteet)
+        {
+            dgvPisteet.DataSource = pisteet;
+        }
     }
 }

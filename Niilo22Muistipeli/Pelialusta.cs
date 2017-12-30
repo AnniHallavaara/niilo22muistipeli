@@ -19,12 +19,19 @@ namespace Niilo22Muistipeli
         public int vaarinArvatut;
     }
     // tietue pisteitä varten
-    public struct Pisteet
+    public struct Pisterivi
     {
         public int voitot;
         public int haviot;
         public string nimi;
-        
+
+        public string Nimi
+        {
+            get
+            {
+                return nimi;
+            }
+        }
         public int Voitot
         {
             get
@@ -39,13 +46,7 @@ namespace Niilo22Muistipeli
                 return haviot;
             }
         }
-        public string Nimi
-        {
-            get
-            {
-                return nimi;
-            }
-        }
+        
     }
 
     public partial class Pelialusta : Form
@@ -64,10 +65,11 @@ namespace Niilo22Muistipeli
 
         bool[] nakyvissa;
 
+        public List<Pisterivi> pisteet = new List<Pisterivi>();
+
         Bitmap[] kuvat;
 
         Bitmap[] niilot = new Bitmap[]
-
         {
             Niilo22Muistipeli.Properties.Resources.Niilo1_pieni,
             Niilo22Muistipeli.Properties.Resources.Niilo2_pieni,
@@ -383,8 +385,9 @@ namespace Niilo22Muistipeli
 
         private void NaytaPisteikkuna()
         {
-            Pisteikkuna akkuna = new Pisteikkuna();
 
+            Pisteikkuna akkuna = new Pisteikkuna();
+            akkuna.AsetaPisteet(pisteet);
             akkuna.ShowDialog(this);
         }
 
